@@ -93,8 +93,14 @@ class Game:
             self.screen.blit(pacman_image, (150 + i * 40, 50 * 15))
 
     def handle_keypress(self, event):
-        pass
-        # TODO: Vérifiez si la touche pressée est la flèche droite avec event.key == pygame.K_RIGHT
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                if not self.check_collision((1, 0)):
+                    self.pacman.set_direction((1, 0))
+
+
+
+        # TODO: Vérifiez si la touche pressée est la flèche droite avec .key == pygame.K_RIGHT
             # TODO: Vérifiez si Pac-Man peut se déplacer à droite sans entrer en collision avec self.check_collision((1, 0))
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers la droite avec self.pacman.set_direction((1, 0))
 

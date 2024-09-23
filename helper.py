@@ -1,6 +1,5 @@
 import pygame
 special_coins_pos = [(1, 1), (14, 1), (1, 13), (14, 13)]
-center_pos = [(12, 7), (11, 7), (13, 7), (14, 7)]
 
 def create_board():
 
@@ -35,10 +34,9 @@ def create_coins(board):
         for x in range(len(board[y])):
             if board[y][x] == 0:
                 coins.append((y, x))
-        for pos in center_pos:
-            if pos in coins:
-                coins.remove(pos)
-                #demander si c comme ca ou si on doit enlver un par un avec remove
+    return coins
+
+#demander si c comme ca ou si on doit enlver un par un avec remove
 
 
     # TODO: Ajouter la position de toutes les cases '0' à la variable coins. Pour ajouter un élément, vous pouvez utiliser l'expression suivante :
@@ -49,7 +47,6 @@ def create_coins(board):
 
     # TODO: Retirer les coins aux positions centrales, en utilisant la variable 'center_pos'.
 
-    return coins
 
 def create_special_coins(board):
     special_coins = []
